@@ -361,32 +361,6 @@ span{
     }
 }
 
-@media(max-width:995px){
-  nav {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 60%;
-    background: #161616;
-    border-left: 3px solid #b74b4b;
-    border-bottom: 3px solid #b74b4b;
-    border-bottom-left-radius: 2rem;
-    padding: 2rem;
-  }
-
-  /* Menú aparece cuando el checkbox está activado */
-  #menu-toggle:checked ~ nav {
-    display: block;
-  }
-
-  nav a {
-    display: block;
-    font-size: 2rem;
-    margin: 2rem 0;
-  }
-}
-
 /* Ocultar el checkbox */
 #menu-toggle {
   display: none;
@@ -401,7 +375,7 @@ span{
   z-index: 101;
 }
 
-/* Menú en pantallas grandes (normal) */
+/* Menú en pantallas grandes */
 nav {
   display: flex;
   gap: 20px;
@@ -410,21 +384,24 @@ nav {
 /* Menú en pantallas pequeñas */
 @media(max-width:995px) {
   .menu-icon {
-    display: block;
+    display: block; /* Mostrar el ícono hamburguesa */
   }
 
   nav {
-    position: absolute;
-    top: 100px; /* ajusta según tu header */
-    right: -100%;
+    position: fixed;
+    top: 80px; /* Ajusta según el header */
+    right: -100%; /* Oculto fuera de la pantalla */
     width: 250px;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 80px);
     background: #111;
     flex-direction: column;
     align-items: center;
     justify-content: start;
     padding-top: 20px;
     transition: right 0.3s ease;
+    border-left: 3px solid #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+    border-bottom-left-radius: 2rem;
   }
 
   /* Cuando el checkbox está activado, mostrar menú */
@@ -433,7 +410,8 @@ nav {
   }
 
   nav a {
-    margin: 15px 0;
+    display: block;
+    font-size: 2rem;
+    margin: 2rem 0;
   }
 }
-
