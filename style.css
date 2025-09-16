@@ -360,19 +360,19 @@ span{
         content: "Programador";
     }
 }
-
 /* Ocultar el checkbox */
 #menu-toggle {
   display: none;
 }
 
-/* Estilo del botón hamburguesa */
+/* Botón hamburguesa */
 .menu-icon {
   display: none;
   font-size: 3rem;
   color: #b74b4b;
   cursor: pointer;
-  z-index: 101;
+  z-index: 102;
+  position: relative;
 }
 
 /* Menú en pantallas grandes */
@@ -381,37 +381,35 @@ nav {
   gap: 20px;
 }
 
-/* Menú en pantallas pequeñas */
-@media(max-width:995px) {
+/* Modo responsive */
+@media(max-width: 995px) {
   .menu-icon {
-    display: block; /* Mostrar el ícono hamburguesa */
+    display: block;
   }
 
   nav {
     position: fixed;
-    top: 80px; /* Ajusta según el header */
-    right: -100%; /* Oculto fuera de la pantalla */
-    width: 250px;
-    height: calc(100vh - 80px);
+    top: 70px; /* justo debajo del header */
+    right: -100%; /* escondido */
+    width: 220px;
+    height: calc(100vh - 70px);
     background: #111;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     padding-top: 20px;
-    transition: right 0.3s ease;
+    transition: right 0.3s ease-in-out;
     border-left: 3px solid #b74b4b;
-    border-bottom: 3px solid #b74b4b;
-    border-bottom-left-radius: 2rem;
   }
 
-  /* Cuando el checkbox está activado, mostrar menú */
+  /* Mostrar el menú cuando el checkbox está activo */
   #menu-toggle:checked ~ nav {
     right: 0;
   }
 
   nav a {
     display: block;
+    margin: 15px 0;
     font-size: 2rem;
-    margin: 2rem 0;
   }
 }
