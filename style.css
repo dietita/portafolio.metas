@@ -361,53 +361,7 @@ span{
     }
 }
 
-@media (max-width: 1000px){
-    .home{
-        gap: 4rem;
-    }
-}
-
 @media(max-width:995px){
-    .home{
-        flex-direction: column;
-        margin: 5rem 4rem;
-    }
-
-    .home .home-content h3{
-        font-size: 2.5rem;
-    }
-
-    .home-content h1{
-        font-size: 5rem;
-    }
-
-    .home-img img{
-        width: 70vw;
-        margin-top: 4rem;
-    }
-}
-
-
-/* Ocultar checkbox */
-#menu-toggle {
-  display: none;
-}
-
-/* Botón hamburguesa */
-.menu-icon {
-  display: none;
-  font-size: 3rem;
-  color: #b74b4b;
-  cursor: pointer;
-  z-index: 101;
-}
-
-/* En pantallas pequeñas */
-@media (max-width: 995px) {
-  .menu-icon {
-    display: block;
-  }
-
   nav {
     display: none;
     position: absolute;
@@ -421,7 +375,7 @@ span{
     padding: 2rem;
   }
 
-  /* Cuando el checkbox está activado → mostrar nav */
+  /* Menú aparece cuando el checkbox está activado */
   #menu-toggle:checked ~ nav {
     display: block;
   }
