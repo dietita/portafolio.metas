@@ -386,3 +386,54 @@ span{
     margin: 2rem 0;
   }
 }
+
+/* Ocultar el checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Estilo del botón hamburguesa */
+.menu-icon {
+  display: none;
+  font-size: 3rem;
+  color: #b74b4b;
+  cursor: pointer;
+  z-index: 101;
+}
+
+/* Menú en pantallas grandes (normal) */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Menú en pantallas pequeñas */
+@media(max-width:995px) {
+  .menu-icon {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 100px; /* ajusta según tu header */
+    right: -100%;
+    width: 250px;
+    height: calc(100vh - 100px);
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 20px;
+    transition: right 0.3s ease;
+  }
+
+  /* Cuando el checkbox está activado, mostrar menú */
+  #menu-toggle:checked ~ nav {
+    right: 0;
+  }
+
+  nav a {
+    margin: 15px 0;
+  }
+}
+
